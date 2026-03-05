@@ -1,0 +1,53 @@
+memo: defalut
+total_epoches: 1000 #number of training epochs
+epoch_size: 2 #number of update iterations in an epoch = How many processes to run
+use_multiprocessing: False #use multiprocessing to parallelize the process
+n_processes: 8 #number of processes to use for training
+
+#grad_norm_clip: 10 # Reduce magnitude of gradients above this L2 norm
+use_cuda: True # Use GPU
+
+normalize_rewards: True
+normalize_advantages: False
+
+gamma: 0.9
+lr: 0.001 #learning rate
+value_coeff: 0.01 #coeff for value loss term in the loss function
+vib_coeff: 0.01 #coeff for vae loss term in the loss function
+modularity_coeff: 10 #coeff for modularity loss term in the loss function
+batch_size: 500
+interval: 1  # How often to change the graph
+
+
+treshold: 0.5 #threshold for the tie comm model
+
+
+
+
+#baselines
+use_swanlab: True
+swanlab_project: 'sl1'
+swanlab_api_key: 's3KnOyNpiJ8RiAjzFPDrE'  # SwanLab API Key         s3KnOyNpiJ8RiAjzFPDrE
+
+
+add_value_last_step: True
+recurrent: True #make the model recurrent in time
+
+
+key_node_enhancement: 1.5
+key_node_scaling: 0.4
+min_key_nodes: 1
+log_key_nodes: True
+
+enhance_key_node_intra_obs: True
+
+core_selection_method: 'original'  # 'original', 'key_node_only', or 'hybrid'
+hybrid_weight: 0.5
+
+gat_dropout: 0.1
+gat_heads: 1
+gat_negative_slope: 0.2
+
+key_node_temperature: 1.0
+use_topk_prob: 0.8
+key_node_replace: True
